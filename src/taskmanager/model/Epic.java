@@ -1,4 +1,4 @@
-public package taskmanager.model;
+package taskmanager.model;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Epic extends Task {
+public class Epic extends taskmanager.model.Task {
     private final List<Integer> subtaskIds = new ArrayList<>();
     private LocalDateTime endTime;
 
