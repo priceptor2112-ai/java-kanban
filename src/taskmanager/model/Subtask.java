@@ -1,5 +1,3 @@
-package taskmanager.model;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Objects;

@@ -1,12 +1,3 @@
-package taskmanager;
-
-import taskmanager.service.TaskManager;
-import taskmanager.service.Managers;
-import taskmanager.model.Task;
-import taskmanager.model.Epic;
-import taskmanager.model.Subtask;
-import taskmanager.model.Status;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
 
@@ -14,7 +5,6 @@ public class Main {
     public static void main(String[] args) {
         TaskManager manager = Managers.getDefault();
 
-        // Тест создания задач с временем
         Task task1 = new Task("Task 1", "Description 1", Status.NEW,
                 Duration.ofMinutes(30), LocalDateTime.now());
         manager.addTask(task1);

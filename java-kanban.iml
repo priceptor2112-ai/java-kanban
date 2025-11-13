@@ -6,15 +6,17 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/src/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/src/test" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/scr/taskmanager" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/scr/taskmanager/model" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/scr/taskmanager/service" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/scr/taskmanager/util" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/taskmanager" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/taskmanager/model" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/taskmanager/service" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/taskmanager/util" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/java/taskmanager" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/scr" />
+      <sourceFolder url="file://$MODULE_DIR$/out" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/out/production" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/out/production/java-kanban" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/src/src" />
-      <excludeFolder url="file://$MODULE_DIR$/test" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

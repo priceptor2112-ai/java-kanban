@@ -1,8 +1,3 @@
-package taskmanager.service;
-
-import taskmanager.model.Task;
-import taskmanager.model.Epic;
-import taskmanager.model.Subtask;
 import java.util.List;
 
 public interface TaskManager {

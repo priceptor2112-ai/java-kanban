@@ -1,11 +1,5 @@
-package taskmanager;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import taskmanager.service.HistoryManager;
-import taskmanager.service.InMemoryHistoryManager;
-import taskmanager.model.Task;
-import taskmanager.model.Status;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

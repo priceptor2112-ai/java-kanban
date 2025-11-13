@@ -1,10 +1,5 @@
-package taskmanager;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import taskmanager.service.FileBackedTaskManager;
-import taskmanager.util.ManagerSaveException;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,7 +12,7 @@ public class FileBackedTaskManagerTest extends TaskManagerTest<FileBackedTaskMan
     private File tempFile;
 
     @BeforeEach
-    void setUp() throws IOException {
+    void setUp() throws IOException {  // УБРАТЬ @Override
         tempFile = Files.createTempFile("tasks", ".csv").toFile();
         manager = new FileBackedTaskManager(tempFile);
     }

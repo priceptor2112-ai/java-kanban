@@ -1,12 +1,5 @@
-package taskmanager;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import taskmanager.service.InMemoryTaskManager;
-import taskmanager.service.TaskManager;
-import taskmanager.model.Epic;
-import taskmanager.model.Subtask;
-import taskmanager.model.Status;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -15,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EpicStatusTest {
-    private TaskManager manager;
+    private InMemoryTaskManager manager;
     private Epic epic;
 
     @BeforeEach
@@ -32,7 +25,6 @@ public class EpicStatusTest {
 
     @Test
     void epicShouldBeNewWhenAllSubtasksNew() {
-        // a. Все подзадачи со статусом NEW
         Subtask subtask1 = new Subtask("Subtask 1", "Desc 1", Status.NEW, epic.getId(),
                 Duration.ofMinutes(30), LocalDateTime.now());
         Subtask subtask2 = new Subtask("Subtask 2", "Desc 2", Status.NEW, epic.getId(),
@@ -46,7 +38,6 @@ public class EpicStatusTest {
 
     @Test
     void epicShouldBeDoneWhenAllSubtasksDone() {
-        // b. Все подзадачи со статусом DONE
         Subtask subtask1 = new Subtask("Subtask 1", "Desc 1", Status.DONE, epic.getId(),
                 Duration.ofMinutes(30), LocalDateTime.now());
         Subtask subtask2 = new Subtask("Subtask 2", "Desc 2", Status.DONE, epic.getId(),
@@ -60,7 +51,6 @@ public class EpicStatusTest {
 
     @Test
     void epicShouldBeInProgressWhenMixedStatus() {
-        // c. Подзадачи со статусами NEW и DONE
         Subtask subtask1 = new Subtask("Subtask 1", "Desc 1", Status.NEW, epic.getId(),
                 Duration.ofMinutes(30), LocalDateTime.now());
         Subtask subtask2 = new Subtask("Subtask 2", "Desc 2", Status.DONE, epic.getId(),
@@ -75,7 +65,6 @@ public class EpicStatusTest {
 
     @Test
     void epicShouldBeInProgressWhenAllSubtasksInProgress() {
-        // d. Подзадачи со статусом IN_PROGRESS
         Subtask subtask1 = new Subtask("Subtask 1", "Desc 1", Status.IN_PROGRESS, epic.getId(),
                 Duration.ofMinutes(30), LocalDateTime.now());
         Subtask subtask2 = new Subtask("Subtask 2", "Desc 2", Status.IN_PROGRESS, epic.getId(),
@@ -98,17 +87,14 @@ public class EpicStatusTest {
         manager.addSubtask(subtask1);
         manager.addSubtask(subtask2);
 
-        // Проверяем начальный статус
         assertEquals(Status.NEW, epic.getStatus());
 
-        // Меняем одну подзадачу на DONE
         subtask1.setStatus(Status.DONE);
         manager.updateSubtask(subtask1);
 
         assertEquals(Status.IN_PROGRESS, epic.getStatus(),
                 "Эпик должен стать IN_PROGRESS при изменении статуса подзадачи");
 
-        // Меняем вторую подзадачу на DONE
         subtask2.setStatus(Status.DONE);
         manager.updateSubtask(subtask2);
 
@@ -124,7 +110,6 @@ public class EpicStatusTest {
 
         assertEquals(Status.IN_PROGRESS, epic.getStatus());
 
-        // Удаляем подзадачу
         manager.deleteSubtask(subtask1.getId());
 
         assertEquals(Status.NEW, epic.getStatus(),
@@ -143,7 +128,6 @@ public class EpicStatusTest {
         manager.addSubtask(subtask1);
         manager.addSubtask(subtask2);
 
-        // Проверяем расчет времени эпика
         Epic savedEpic = manager.getEpic(epic.getId());
         assertNotNull(savedEpic.getStartTime(), "Время начала эпика должно быть рассчитано");
         assertNotNull(savedEpic.getEndTime(), "Время окончания эпика должно быть рассчитано");

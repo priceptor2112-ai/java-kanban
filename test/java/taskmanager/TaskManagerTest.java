@@ -1,14 +1,7 @@
-package taskmanager;
-
 import org.junit.jupiter.api.Test;
-import taskmanager.model.*;
-import taskmanager.service.TaskManager;
-import taskmanager.util.TimeConflictException;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public abstract class TaskManagerTest<T extends TaskManager> {

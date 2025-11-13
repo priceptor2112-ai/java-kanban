@@ -1,12 +1,10 @@
-package taskmanager.model;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Epic extends taskmanager.model.Task {
+public class Epic extends Task {
     private final List<Integer> subtaskIds = new ArrayList<>();
     private LocalDateTime endTime;
 
@@ -33,6 +31,10 @@ public class Epic extends taskmanager.model.Task {
     @Override
     public LocalDateTime getEndTime() {
         return endTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
     }
 
     public void calcTime(List<Subtask> subs) {
