@@ -1,6 +1,7 @@
 import java.util.List;
 
 public interface TaskManager {
+
     List<Task> getAllTasks();
 
     Task getTask(int id);
